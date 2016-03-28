@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  get 'admin/index'
-
-  get 'users/index'
-
-  resources :Users
-
+  resources :users
+  resources :admins
+  resources :questions
+  resources :categories
+  resources :answers
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
