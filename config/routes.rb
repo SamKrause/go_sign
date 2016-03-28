@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :users
+  resources :admins
   resources :questions
   resources :categories
   resources :answers
