@@ -40,6 +40,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'rails-erd'
 end
 
 group :development do
@@ -51,4 +52,3 @@ group :development do
   gem 'pry'
   gem 'pry-byebug'
 end
-
