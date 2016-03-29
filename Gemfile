@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'formtastic', '~> 3.1', '>= 3.1.3'
+gem 'activeadmin', '~> 1.0.0.pre2'
 gem 'devise'
 gem 'paperclip'
 gem 'aws-sdk'
