@@ -4,13 +4,23 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    Edit Your Profile Picture <%= f.label :avatar %>:
+    Edit Your <%= f.label :avatar %>:
     <%= f.file_field :avatar %>
   </div>
 
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
