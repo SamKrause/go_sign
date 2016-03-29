@@ -8,6 +8,15 @@
 </head>
 <body>
 
+<nav>
+  <% if current_user %>
+    <ul class="name&avatar">
+      <li class="username"><%= image_tag(current_user.avatar.url(:thumb)) %></li>
+      <li class="avatar"><%= "Welcome " + current_user.first_name %></li>
+    </ul>
+  <% end %>
+</nav>
+
 <%= yield %>
 
 </body>
