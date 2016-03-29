@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'devise'
 gem 'paperclip'
 gem 'aws-sdk'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -40,6 +41,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'rails-erd'
 end
 
 group :development do
@@ -51,4 +53,3 @@ group :development do
   gem 'pry'
   gem 'pry-byebug'
 end
-
