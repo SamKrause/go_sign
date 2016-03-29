@@ -1,17 +1,36 @@
 ActiveAdmin.register CategoriesAnswer do
 
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
- permit_params :category_id, :answer_id
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if resource.something?
-#   permitted
-# end
+  permit_params :category_id, :answer_id
+
+  form do |f|
+    f.inputs "Details" do
+      f.input :category, :as => :select, :collection => Category.all.collect {|category| [category.name, category.id] }
+      f.input :answer, :as => :select, :collection => Answer.all.collect {|answer| [answer.answer, answer.id] }
+    end
+    f.actions
+  end
+
+  index do
+    id_column
+    column :category_name do |category_answer|
+      category_answer.category.name
+    end
+    column :answer do |category_answer|
+      category_answer.answer.answer
+    end
+    column :created_at
+    column :updated_at
+    actions
+  end
+
+  show do |category_answer|
+    attributes_table do
+      row :category
+      row :answer do
+        category_answer.answer.answer
+      end
+    end
+  end
 
 
 end
