@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160329191104) do
+ActiveRecord::Schema.define(version: 20160329212234) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20160329191104) do
     t.string   "gif_content_type"
     t.integer  "gif_file_size"
     t.datetime "gif_updated_at"
+    t.integer  "question_id"
   end
 
   create_table "attempts", force: :cascade do |t|
@@ -82,6 +83,8 @@ ActiveRecord::Schema.define(version: 20160329191104) do
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "answer_id"
+    t.string   "name"
   end
 
   create_table "test_attempts", force: :cascade do |t|

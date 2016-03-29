@@ -16,7 +16,7 @@ class AnswersController < ApplicationController
 
   private
   def answer_params
-    params.require(:answer).permit(:answer, :gif)
+    params.require(:answer).permit(:answer, :gif, :question_id)
   end
 
 end
