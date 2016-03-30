@@ -6,7 +6,7 @@ ActiveAdmin.register Answer do
     f.inputs "Answer Details" do
       f.input :answer
       f.input :gif, :required => false, :as => :file
-      f.input :question_id
+      f.input :question, :as => :select, :collection => Question.all.collect {|question| [question.name, question.id] }
       # Will preview the image when the object is edited
     end
     f.actions
