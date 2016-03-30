@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'home' => 'home#index'
   get 'about' => 'home#about'
+  get '/users/profile' => 'users#index'
+  get 'tests/index'
 
   devise_for :users
 
