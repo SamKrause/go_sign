@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
   def index
     @categories = Category.all
-    @questions = Question.all
+    @answers = Answer.all
   end
 end

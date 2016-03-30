@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160329212234) do
+ActiveRecord::Schema.define(version: 20160330212018) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20160329212234) do
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
   create_table "answers", force: :cascade do |t|
-    t.string   "answer"
+    t.string   "name"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.string   "gif_file_name"
@@ -83,7 +83,6 @@ ActiveRecord::Schema.define(version: 20160329212234) do
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "answer_id"
     t.string   "name"
   end
 
