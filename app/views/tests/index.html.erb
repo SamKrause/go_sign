@@ -1,11 +1,7 @@
 <% if current_user %>
-  <h1>Categories</h1><br/>
-  <% @categories.each do |c| %>
-    <%= c.name %>
-  <% end %>
-  <div class="answers">
-    <% @answers %>
-  </div>
+  <section id="test">
+    <%= render partial: 'tests/categories' %>
+  </section>
 <% else %>
   <h1>Please Log In To Begin!</h1>
   <h3>Or Sign Up</h3>
