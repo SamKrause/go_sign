@@ -1,13 +1,16 @@
 ActiveAdmin.register Answer do
 
-  permit_params :answer, :gif, :question_id
-
   form do |f|
-    f.inputs "Answer Details" do
-      f.input :answer
-      f.input :gif, :required => false, :as => :file
-      f.input :question, :as => :select, :collection => Question.all.collect {|question| [question.name, question.id] }
-      # Will preview the image when the object is edited
+
+    f.inputs do
+        f.input :answer
+        f.input :gif, :required => false, :as => :file
+
+      f.has_many :question do |s|
+        s.input :category
+        s.input :name
+        s.actions
+      end
     end
     f.actions
   end
@@ -31,7 +34,6 @@ ActiveAdmin.register Answer do
         image_tag(ad.gif.url(:thumb))
       end
       row :question_id
-      # Will display the image on show object page
     end
   end
 
