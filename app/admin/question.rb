@@ -9,7 +9,7 @@ ActiveAdmin.register Question do
       row :name
       row :answer do
         if question.answer
-          question.answer.answer
+          question.answer.name
         else
           "None"
         end
