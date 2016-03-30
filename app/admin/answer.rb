@@ -3,7 +3,7 @@ ActiveAdmin.register Answer do
   form do |f|
 
     f.inputs do
-        f.input :answer
+        f.input :name
         f.input :gif, :required => false, :as => :file
 
       f.has_many :question do |s|
@@ -17,7 +17,7 @@ ActiveAdmin.register Answer do
 
   index do
     id_column
-    column :answer
+    column :name
     column :gif do |ad|
       image_tag(ad.gif.url(:thumb))
     end
@@ -29,7 +29,7 @@ ActiveAdmin.register Answer do
 
   show do |ad|
     attributes_table do
-      row :answer
+      row :name
       row :gif do
         image_tag(ad.gif.url(:thumb))
       end

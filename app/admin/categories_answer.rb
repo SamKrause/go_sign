@@ -5,7 +5,7 @@ ActiveAdmin.register CategoriesAnswer do
   form do |f|
     f.inputs "Details" do
       f.input :category, :as => :select, :collection => Category.all.collect {|category| [category.name, category.id] }
-      f.input :answer, :as => :select, :collection => Answer.all.collect {|answer| [answer.answer, answer.id] }
+      f.input :answer, :as => :select, :collection => Answer.all.collect {|answer| [answer.name, answer.id] }
     end
     f.actions
   end
@@ -16,7 +16,7 @@ ActiveAdmin.register CategoriesAnswer do
       category_answer.category.name
     end
     column :answer do |category_answer|
-      category_answer.answer.answer
+      category_answer.name.answer
     end
     column :created_at
     column :updated_at
@@ -27,7 +27,7 @@ ActiveAdmin.register CategoriesAnswer do
     attributes_table do
       row :category
       row :answer do
-        category_answer.answer.answer
+        category_answer.name.answer
       end
     end
   end

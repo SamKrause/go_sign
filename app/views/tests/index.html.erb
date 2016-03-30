@@ -3,6 +3,9 @@
   <% @categories.each do |c| %>
     <%= c.name %>
   <% end %>
+  <div class="answers">
+    <% @answers %>
+  </div>
 <% else %>
   <h1>Please Log In To Begin!</h1>
   <h3>Or Sign Up</h3>
