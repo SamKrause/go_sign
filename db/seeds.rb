@@ -6,20 +6,48 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create(first_name: "Testy", last_name: "Tester", email: "test@tester.com", password: "password", password_confirmation: "password")
+User.create!(first_name: "Testy", last_name: "Tester", email: "test@tester.com", password: "password", password_confirmation: "password")
 
-AdminUser.create(email: "admin@tester.com", password: "password", password_confirmation: "password")
+AdminUser.create!(email: "admin@tester.com", password: "password", password_confirmation: "password")
 
-Answer.create(answer: 'mom', question_id: 1)
+Question.create!(category_id: 1, name: "mom")
+Question.create!(category_id: 1, name: "aunt")
+Question.create!(category_id: 1, name: "boy")
+Question.create!(category_id: 1, name: "brother")
+Question.create!(category_id: 1, name: "dad")
+Question.create!(category_id: 1, name: "girl")
+Question.create!(category_id: 1, name: "grandma")
+Question.create!(category_id: 1, name: "grandpa")
+Question.create!(category_id: 1, name: "sister")
+Question.create!(category_id: 1, name: "uncle")
 
-Attempt.create(user_id: 1, question_id: 1, test_attempt_id: 1, correct: "true")
+Answer.create!(answer: 'mom', question_id: 1, gif: File.new("public/images/seed/mom.gif"))
+Answer.create!(answer: 'aunt', question_id: 2, gif: File.new("public/images/seed/aunt.gif"))
+Answer.create!(answer: 'boy', question_id: 3, gif: File.new("public/images/seed/boy.gif"))
+Answer.create!(answer: 'brother', question_id: 4, gif: File.new("public/images/seed/brother.gif"))
+Answer.create!(answer: 'dad', question_id: 5, gif: File.new("public/images/seed/dad.gif"))
+Answer.create!(answer: 'girl', question_id: 6, gif: File.new("public/images/seed/girl.gif"))
+Answer.create!(answer: 'grandma', question_id: 7, gif: File.new("public/images/seed/grandma.gif"))
+Answer.create!(answer: 'grandpa', question_id: 8, gif: File.new("public/images/seed/grandpa.gif"))
+Answer.create!(answer: 'sister', question_id: 9, gif: File.new("public/images/seed/sister.gif"))
+Answer.create!(answer: 'uncle', question_id: 10, gif: File.new("public/images/seed/uncle.gif"))
 
-Category.create(name: "Family")
+Attempt.create!(user_id: 1, question_id: 1, test_attempt_id: 1, correct: "true")
 
-CategoriesAnswer.create(category_id: 1, answer_id: 1)
+Category.create!(name: "Family")
 
-Question.create(category_id: 1, answer_id: 1)
+CategoriesAnswer.create!(category_id: 1, answer_id: 1)
+CategoriesAnswer.create!(category_id: 1, answer_id: 2)
+CategoriesAnswer.create!(category_id: 1, answer_id: 3)
+CategoriesAnswer.create!(category_id: 1, answer_id: 4)
+CategoriesAnswer.create!(category_id: 1, answer_id: 5)
+CategoriesAnswer.create!(category_id: 1, answer_id: 6)
+CategoriesAnswer.create!(category_id: 1, answer_id: 7)
+CategoriesAnswer.create!(category_id: 1, answer_id: 8)
+CategoriesAnswer.create!(category_id: 1, answer_id: 9)
+CategoriesAnswer.create!(category_id: 1, answer_id: 10)
 
-TestAttempt.create(user_id: 1, category_id: 1)
+
+TestAttempt.create!(user_id: 1, category_id: 1)
 
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
