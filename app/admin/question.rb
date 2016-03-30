@@ -2,13 +2,22 @@ ActiveAdmin.register Question do
 
  permit_params :category_id, :answer_id, :name
 
- form do |f|
-   f.inputs "Details" do
-     f.input :category, :as => :select, :collection => Category.all.collect {|category| [category.name, category.id] }
-     f.input :answer, :as => :select, :collection => Answer.all.collect {|answer| [answer.answer, answer.id] }
-   end
-   f.actions
- end
+   show do |question|
+    attributes_table do
+      row :id
+      row :category
+      row :name
+      row :answer do
+        if question.answer
+          question.answer.answer
+        else
+          "None"
+        end
+      end
+      row :created_at
+      row :updated_at
+    end
+  end
 
 
 end
