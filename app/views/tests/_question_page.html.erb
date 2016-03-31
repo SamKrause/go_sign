@@ -1,1 +1,7 @@
-_question_page.html.erb
+
+<div id="family_questions">
+  <% @family_answers.each do |a| %>
+    <img src="<%= a.gif %>".html_safe >
+    <li><%= a.name %></li>
+  <% end %>
+</div>
