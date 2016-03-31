@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  devise_for :users
 
   root 'home#index'
   get 'home' => 'home#index'
@@ -9,11 +10,12 @@ Rails.application.routes.draw do
   get '/users/profile' => 'users#index'
   get 'tests/index'
 
-  devise_for :users
-
   resources :questions
   resources :categories
   resources :answers
+
+  post '/users/signup' => 'users#signup'
+  post '/sessions/login' => 'sessions#login'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
