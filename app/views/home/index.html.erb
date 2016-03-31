@@ -6,10 +6,20 @@
 	<li> <%= link_to 'Tests', tests_index_path, :method => :get %> </li>
 </ul>
 
-<ul>
-	<li><%= link_to "Log In", new_user_session_path, :id => "loginbutton", :method => :get unless current_user %></li>
-	<li><%= link_to "Sign Up", new_user_registration_path, :id => "signupbutton", :method => :get unless current_user %></li>
+<section id='home'>
 
-	<li><%= link_to "Log Out", destroy_user_session_path, :id => "logoutbutton", :method => :delete if current_user %></li>
-	<li><%= link_to "Profile", '/users/profile', :method => :get if current_user %></li>
-</ul>
+  <div id='container'>
+    <% if current_user %>
+      <%= render partial: '/home/welcome'  %>
+    <% else %>
+      Welcome, please sign in or sign up<br/>
+      <button id='signup-show'>Ajax Signup</button>
+      <button id='login-show'>Ajax Log In</button>
+      <%= render partial: './users/signup' %>
+      <%= render partial: './users/login' %>
+      <div id="message"></div>
+    <% end %>
+
+  </div>
+
+</section>
