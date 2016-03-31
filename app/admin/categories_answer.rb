@@ -16,7 +16,7 @@ ActiveAdmin.register CategoriesAnswer do
       category_answer.category.name
     end
     column :answer do |category_answer|
-      category_answer.name.answer
+      category_answer.answer.name
     end
     column :created_at
     column :updated_at
@@ -27,7 +27,7 @@ ActiveAdmin.register CategoriesAnswer do
     attributes_table do
       row :category
       row :answer do
-        category_answer.name.answer
+        category_answer.answer.name
       end
     end
   end

@@ -5,6 +5,7 @@ gem 'activeadmin', '~> 1.0.0.pre2'
 gem 'devise'
 gem 'paperclip'
 gem 'aws-sdk'
+gem 'gon'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 # Use sqlite3 as the database for Active Record
