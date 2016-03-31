@@ -1,3 +1,5 @@
-<% gon.family.answers.each do |f| %>
-  <%= f.name %>
-<% end %>
+<div class="family_questions">
+  <% @family_answers.each do |a| %>
+    <li><%= a.name %></li>
+  <% end %>
+</div>
