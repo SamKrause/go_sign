@@ -13,6 +13,17 @@ class TestsController < ApplicationController
     render json: {success: true, family_questions: view_string}
   end
 
+  def finishedTestPage
+    view_string = render_to_string partial: 'tests/finished_test'
+    render json: {success: true, finished_test: view_string}
+  end
+
+  def categories
+    @categories = Category.all
+    view_string = render_to_string partial: 'tests/categories'
+    render json: {success: true, categories: view_string}
+  end
+
   def generateAnswers
     answers = []
     while answers.length < 10
