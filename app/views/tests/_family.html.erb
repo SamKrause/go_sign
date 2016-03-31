@@ -1,11 +1,24 @@
+<%= include_gon %>
 <h1>Family</h1>
 
-<div class="hidden_array">
-  <% @hidden_array %>
+<div class="hidden_answers">
+
+  <% @answers.each do |answer| %>
+    <div class="next_question">
+      <img src="<%= answer.gif %>">
+      <% current_answers = [answer] %>
+      <% other_answers = @answers.dup - current_answers %>
+      <% current_answers.concat(other_answers.shuffle[0..2]) %>
+      <% current_answers = current_answers.shuffle %>
+
+      <% current_answers.each do |a| %>
+        <button class="answer"><%= a.name %></button>
+      <% end %>
+    </div>
+  <% end %>
+
 </div>
 
-<img src="<%= @hidden_array[4].gif %>" >
-<button><%= @hidden_array[4].name %></button>
-<button><%= @hidden_array[7].name %></button>
-<button><%= @hidden_array[2].name %></button>
-<button><%= @hidden_array[8].name %></button>
+<div id="current_question">
+</div>
+

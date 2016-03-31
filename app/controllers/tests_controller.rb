@@ -6,22 +6,25 @@ class TestsController < ApplicationController
   def familyQuestions
     @family = Category.find_by_name("Family")
     @family_answers = @family.answers
-    @hidden_array = generateHiddenArray
+    @answers = generateAnswers
+    gon.hidden_array = @hidden_array
+
     view_string = render_to_string partial: 'tests/family'
     render json: {success: true, family_questions: view_string}
   end
 
-  def generateHiddenArray
-    hidden_array = []
-    while hidden_array.length < 10
+  def generateAnswers
+    answers = []
+    while answers.length < 10
       family_answer = @family_answers.sample
-      if hidden_array.include?(family_answer)
+      if answers.include?(family_answer)
         next
       else
-        hidden_array << family_answer
+        answers << family_answer
       end
     end
-    return hidden_array
+    return answers
   end
+
 
 end
