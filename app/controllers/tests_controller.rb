@@ -25,6 +25,5 @@ class TestsController < ApplicationController
     end
     return answers
   end
-
-
+  
 end
