@@ -1,3 +1,11 @@
-<% gon.family.answers.each do |f| %>
-  <%= f.name %>
-<% end %>
+<h1>Family</h1>
+
+<div class="hidden_array">
+  <% @hidden_array %>
+</div>
+
+<img src="<%= @hidden_array[4].gif %>" >
+<button><%= @hidden_array[4].name %></button>
+<button><%= @hidden_array[7].name %></button>
+<button><%= @hidden_array[2].name %></button>
+<button><%= @hidden_array[8].name %></button>

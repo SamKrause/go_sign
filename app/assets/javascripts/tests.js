@@ -1,16 +1,19 @@
 $(document).ready(function(){
   var question_array = [];
-  var $category_name = $('.category_name');
-  $category_name.click(function(){
-    if ($(this).text() == "Family"){
-      console.log("true, this is family");
-      var gfamily = gon.family_answers;
-      console.log(gfamily.length);
-      for(var i = 0; i < gfamily.length; i ++){
-        console.log(gfamily[i].name);
+
+  $('.category_name').click(function(){
+    // var $category_name = $(this).text();
+
+    $.get(
+      'family',
+      function(response) {
+        $('#test').html(response.family_questions);
       }
-      $('.question').html("<img src=\"gfamily[0].gif\">");
-    }
+    )
+      // for(var i = 0; i < gfamily.length; i ++){
+        // console.log(gfamily[i].name);
+      // }
+      // $('.question').html("<img src=\"gfamily[0].gif\">");
   });
 
 })

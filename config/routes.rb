@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   post '/users/signup' => 'users#signup'
   post '/sessions/login' => 'sessions#login'
 
+  get '/tests/family' => 'tests#familyQuestions'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
