@@ -1,10 +1,7 @@
 <%= Gon::Base.render_data %>
 <h1>Categories</h1><br/>
 <ul class="categories">
-<% @categories.each do |c| %>
-  <li class="category_name"><%= c.name %></li>
-<% end %>
+  <% @categories.each do |c| %>
+    <li class="category_name"><%= c.name %></li>
+  <% end %>
 </ul>
-<h2>Question</h2>
-<div class="question">
-</div>

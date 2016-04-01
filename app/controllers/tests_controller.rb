@@ -6,38 +6,49 @@ class TestsController < ApplicationController
   def familyQuestions
     @family = Category.find_by_name("Family")
     @family_answers = @family.answers
-    @answers = generateAnswers
+    @answers = generateAnswers(@family_answers)
 
     view_string = render_to_string partial: 'tests/family'
-    render json: {success: true, family_questions: view_string}
+    render json: {success: true, questions: view_string}
   end
 
   def foodQuestions
     @food = Category.find_by_name("Food")
     @food_answers = @food.answers
-    @answers = generateAnswers
+    @answers = generateAnswers(@food_answers)
 
     view_string = render_to_string partial: 'tests/food'
-    render json: {success: true, food_questions: view_string}
+    render json: {success: true, questions: view_string}
   end
 
   def feelingsQuestions
     @feelings = Category.find_by_name("Feelings")
     @feelings_answers = @feelings.answers
-    @answers = generateAnswers
+    @answers = generateAnswers(@feelings_answers)
 
     view_string = render_to_string partial: 'tests/feelings'
-    render json: {success: true, feelings_questions: view_string}
+    render json: {success: true, questions: view_string}
   end
 
-  def generateAnswers
+  def finishedTestPage
+    view_string = render_to_string partial: 'tests/finished_test'
+    render json: {success: true, finished_test: view_string}
+  end
+
+  def categories
+    @categories = Category.all
+    view_string = render_to_string partial: 'tests/categories'
+    render json: {success: true, categories: view_string}
+  end
+
+  def generateAnswers(name_of_category_answers)
     answers = []
     while answers.length < 10
-      family_answer = @family_answers.sample
-      if answers.include?(family_answer)
+      new_answer = name_of_category_answers.sample
+      if answers.include?(new_answer)
         next
       else
-        answers << family_answer
+        answers << new_answer
       end
     end
     return answers
