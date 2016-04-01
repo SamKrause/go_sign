@@ -21,18 +21,18 @@ position:relative;
 top:15px;
  }
  .auLogosm{
- 	background: url(/assets/audisaSm.svg) no-repeat; 
- 	background-size:contain; 
- 	width:120px; 
+ 	background: url(/assets/audisaSm.svg) no-repeat;
+ 	background-size:contain;
+ 	width:120px;
  	height:50px;
- 	
+
  }
 
  .auLogo{margin:0 auto;
- 	
- 	background: url(/assets/aulogo.svg) no-repeat; 
- 	background-size:contain; 
- 	width:250px; 
+
+ 	background: url(/assets/aulogo.svg) no-repeat;
+ 	background-size:contain;
+ 	width:250px;
  	height:100px;
  	padding:15px;
  }
@@ -41,10 +41,10 @@ html{font-size: 16px;}
 header,.headWrap{height:75px;
 
 }
-.headWrap{background-color: rgba(46, 138, 138, 0.4); 
+.headWrap{background-color: rgba(46, 138, 138, 0.4);
 color: rgba(46, 138, 138, 0.4);}
 
-header{width:960px; 
+header{width:960px;
 	margin:0 auto;
 	z-index: 100;
 }
@@ -53,27 +53,27 @@ header{width:960px;
 
  .content{ width:960px; margin:0 auto;}
 
- /* Standard Top Navigation */	
+ /* Standard Top Navigation */
  nav{
  	z-index: 9999;
  }
 
- nav ul{ 
+ nav ul{
  	width:300px;
- 	float:right; 
+ 	float:right;
  	position: relative;
- 	top:20px;	
+ 	top:20px;
  	}
 
  nav ul li{
- 	display:inline-block; 
+ 	display:inline-block;
  	font-size: 1.2em;
- 	padding-right:5px;	
+ 	padding-right:5px;
  }
 
 nav li a:link{
- 	text-decoration: none; 
- 	color:white; 
+ 	text-decoration: none;
+ 	color:white;
  	font-size:1.3em;
  }
 nav li a:visited{color:white;}
@@ -81,20 +81,6 @@ nav li a:hover{
 	color:grey;
 }
 nav li a:active{ color:white; }
-
-#welcome{padding:15px;}
-.username{width:150px;
-margin:0 auto;}
-.profiletitle{color:white;}
-
-.profileLogOut{
-	width:100px;
-	float:right;
-	position:relative;
-	top:100px;
-	font-size: 1.3em;
-	color:white;
-}
 
 .ansPic{width:300px; margin:0 auto;}
 .ansWrap{ width:500px; margin:0 auto; }
@@ -106,17 +92,3 @@ margin:0 auto;
 
 top:100px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
