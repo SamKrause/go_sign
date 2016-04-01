@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'gallaudet';
+    src: url('GALLAUDET.ttf');
+}
+
+.text_to_sign {
+  font-family: 'gallaudet';
+  font-size: 10em;
+  height: 100px;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+  text-align: center;
+  line-height: 100px;
+}
+
+#letters_input {
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+}
