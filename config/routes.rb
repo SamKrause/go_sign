@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   get '/tests/finished_test' => 'tests#finishedTestPage'
   get '/tests/categories' => 'tests#categories'
 
+  post '/attempts/create' => 'attempts#create'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
