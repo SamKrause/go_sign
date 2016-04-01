@@ -1,8 +1,5 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 #home {
-.fullscreen-bg {
+  .fullscreen-bg {
     position: fixed;
     top: 0;
     right: 0;
@@ -10,52 +7,53 @@
     left: 0;
     overflow: hidden;
     z-index: -100;
-   
-}
+  }
 
-.fullscreen-bg__video {
+  .fullscreen-bg__video {
     position: absolute;
     object-fit: cover;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-}
-
-#signup-show, #login-show{
-  border-radius:6px;
-  color:white;
-  border:white 1px solid;
-  width:425px;
-  margin:0 auto;
-  font-size:2em;
-  padding:8px;
-  text-align:center;  
-  letter-spacing:.08em;
-  background: rgb(167,199,220); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(167,199,220,1) 0%, rgba(133,178,211,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(167,199,220,1) 0%,rgba(133,178,211,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(167,199,220,1) 0%,rgba(133,178,211,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7c7dc', endColorstr='#85b2d3',GradientType=0 ); /* IE6-9 */
   }
 
-a:link{text-decoration:none; }
-a:link:hover{background-color:red;}
+  #signup-show, #login-show{
+    border-radius:6px;
+    color:white;
+    border:white 1px solid;
+    width:425px;
+    margin:0 auto;
+    font-size:2em;
+    padding:8px;
+    text-align:center;
+    letter-spacing:.08em;
+    background: rgb(167,199,220); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(167,199,220,1) 0%, rgba(133,178,211,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(167,199,220,1) 0%,rgba(133,178,211,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(167,199,220,1) 0%,rgba(133,178,211,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7c7dc', endColorstr='#85b2d3',GradientType=0 ); /* IE6-9 */
+  }
 
-  
+  a {
+    text-decoration:none;
+    color: white;
+    font-size: 1em;
+    &:hover {
+      color: rgba(46, 138, 138, 0.7);
+      background-color:white;
+    }
+  }
 
   #container {
-
     width:500px;
-    background-color: rgba(46, 138, 138, 0.7); 
+    background-color: rgba(46, 138, 138, 0.7);
     color: rgba(46, 138, 138, 0.7);
     margin:0 auto;
     margin-top:100px;
     height:300px;
-    border-radius:5px;  
-
+    border-radius:5px;
   }
- 
 
   button {
     display: block;
@@ -76,6 +74,7 @@ a:link:hover{background-color:red;}
       transform: translateX(0);
     }
   }
+
   .close {
     margin-top: -1.5em;
     margin-right: -1.5em;
