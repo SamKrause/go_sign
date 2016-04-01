@@ -28,12 +28,16 @@ $(document).ready(function(){
       if($(this).text() == $('.correct_answer').last().text()){
         incrementRight();
         postAttempt("true")
+        $('.answer_message').last().html("Correct!").slideDown(1000);
       } else {
         incremenWrong();
         postAttempt("false")
+        $('.answer_message').last().slideDown(1000);
       };
+
+      setTimeout(function(){
       if ($('.next_question').first().html()) {
-        $('#current_question').html($('.next_question').first().html());
+        $('#current_question').html($('.next_question').first().html()).hide().fadeIn(1000);
         $('.next_question').first().remove();
         resetQuestionButtons();
       } else {
@@ -47,6 +51,7 @@ $(document).ready(function(){
           }
         )
       }
+    }, 4000);
     });
   };
 
