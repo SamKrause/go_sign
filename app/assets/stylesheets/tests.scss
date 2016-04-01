@@ -1,8 +1,63 @@
-.current_user_id, .hidden_answers, .hidden_category_id, .question_id {
+.current_user_id, .hidden_answers, .hidden_category_id, .question_id, {
   display: none;
+}
+
+.category_name:hover {
+  cursor: pointer;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .correct_answer {
   display: none;
   height:100px;
+}
+
+.answer_message {
+  display: none;
+  color: rgb(46, 138, 138);
+}
+
+#current_question {
+  text-align: center;
+}
+
+.category_title {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#answer_buttons {
+  background-color: rgba(46, 138, 138, 0.4);
+  color: white;
+  font-size: 1.5em;
+  display: inline-block;
+  width: 6em;
+  padding-bottom: .5em;
+  padding-top: .5em;
+  border-radius: 12px;
+}
+
+#answer_buttons:hover {
+  background-color: rgb(46, 138, 138);
+  cursor: pointer;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.answer_gif {
+  width:300px;
+  margin-top: 0;
+  margin-bottom: 25px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.question_wrap {
+  width:500px;
+  margin:0 auto;
+}
+
+center {
+  h1 {
+  margin-top: 20px;
+  }
 }
