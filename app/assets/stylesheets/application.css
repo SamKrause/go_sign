@@ -13,3 +13,36 @@
  *= require_tree .
  *= require_self
  */
+ .auLogo{margin:0 auto;
+ 	
+ 	background: url(/assets/aulogo.svg) no-repeat; 
+ 	background-size:contain; 
+ 	width:250px; 
+ 	height:100px;
+ 	padding:15px;
+ }
+
+html{font-size: 16px;}
+header,.headWrap{height:75px; 
+}
+.headWrap{background-color: rgba(46, 138, 138, 0.4); 
+color: rgba(46, 138, 138, 0.4);}
+
+header{width:960px; 
+	margin:0 auto;
+	z-index: 100;
+}
+ .headWrap, .contentWrap{width:100%;}
+
+
+ .content{ width:960px; margin:0 auto;}
+
+ /* Standard Top Navigation */	
+ nav ul li{display:inline-block; 
+ 	font-size: 1.2em;
+ 	padding-right:5px;	
+ }
+ nav a:link{text-decoration: none;}
+ nav a:visited{}
+ nav a:active{}
+ nav a:hover{}
