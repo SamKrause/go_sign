@@ -13,23 +13,23 @@
  *= require_tree .
  *= require_self
  */
- .auLogoWrap{
+ .auLogoWrap {
  	display: inline-block;
  	width:250px;
-float:left;
-position:relative;
-top:15px;
+  float:left;
+  position:relative;
+  top:15px;
  }
- .auLogosm{
+
+ .auLogosm {
  	background: url(/assets/audisaSm.svg) no-repeat;
  	background-size:contain;
  	width:120px;
  	height:50px;
-
  }
 
- .auLogo{margin:0 auto;
-
+ .auLogo {
+  margin:0 auto;
  	background: url(/assets/aulogo.svg) no-repeat;
  	background-size:contain;
  	width:250px;
@@ -82,13 +82,9 @@ nav li a:hover{
 }
 nav li a:active{ color:white; }
 
-.ansPic{width:300px; margin:0 auto;}
-.ansWrap{ width:500px; margin:0 auto; }
-#test{cursor:pointer; }
-
-.typing{width:600px;
+.typing {
+  width:600px;
 	position: relative;
-margin:0 auto;
-
-top:100px;
+  margin:0 auto;
+  top:100px;
 }
