@@ -1,4 +1,4 @@
-<h1>Home</h1>
+<!-- <h1>Home</h1>
 
 <ul>
 	<li><%= link_to 'Home', '/home', :method => :get %> </li>
@@ -21,5 +21,40 @@
     <% end %>
 
   </div>
+
+</section> -->
+
+
+<section id='home'>
+
+  <div id='container'>
+    <% if current_user %>
+      <%= render partial: '/home/welcome'  %>
+    <% else %>
+    <br />
+        <a href="#"><div class="auLogo"></div></a>
+        
+
+    <a href="#">
+      <div id="signup-show">Signup to GoSign</div>  
+    </a>
+    <br />
+
+    <a href="#">
+      <div id="login-show">Existing Members Log-In</div>
+    </a>
+      <%= render partial: './users/signup' %>
+      <%= render partial: './users/login' %>
+      <div id="message"></div>
+    <% end %> 
+
+  </div>
+  <!-- <div class="fullscreen-bg">
+    <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
+        
+        <source src="assets/bkvid.mp4" type="video/mp4">
+        
+    </video>
+</div> -->
 
 </section>
