@@ -1,19 +1,19 @@
-<div class="ansWrap">
+<div class="question_wrap">
 <div class="hidden_answers">
 
   <% @answers.each do |answer| %>
     <div class="next_question">
-      <h1 class="answer_message" style="display:none">Sorry :( <br> The correct answer was <%= answer.name %>.</h1>
+      <h1 class="answer_message">Sorry <i class="fa fa-frown-o"></i> <br> The correct answer was <%= answer.name %>.</h1>
       <p class="correct_answer"><%= answer.name %></p>
       <p class="question_id"><%= answer.question.id %></p>
-      <img class="ansPic" src="<%= answer.gif %>">
+      <img class="answer_gif" src="<%= answer.gif %>">
       <% current_answers = [answer] %>
       <% other_answers = @answers.dup - current_answers %>
       <% current_answers.concat(other_answers.shuffle[0..2]) %>
       <% current_answers = current_answers.shuffle %>
       <br />
       <% current_answers.each do |a| %>
-        <button class="answer"><%= a.name %></button>
+        <p id="answer_buttons" class="answer"><%= a.name %></p>
       <% end %>
     </div>
   <% end %>
