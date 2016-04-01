@@ -81,12 +81,31 @@ nav li a:hover{
 	color:grey;
 }
 nav li a:active{ color:white; }
- 
 
+#welcome{padding:15px;}
+.username{width:150px;
+margin:0 auto;}
+.profiletitle{color:white;}
 
+.profileLogOut{
+	width:100px;
+	float:right;
+	position:relative;
+	top:100px;
+	font-size: 1.3em;
+	color:white;
+}
 
+.ansPic{width:300px; margin:0 auto;}
+.ansWrap{ width:500px; margin:0 auto; }
+#test{cursor:pointer; }
 
+.typing{width:600px;
+	position: relative;
+margin:0 auto;
 
+top:100px;
+}
 
 
 
