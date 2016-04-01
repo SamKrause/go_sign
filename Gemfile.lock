@@ -69,6 +69,7 @@ GEM
       thor (~> 0.19)
     builder (3.2.2)
     byebug (8.2.2)
+    chartkick (1.4.2)
     choice (0.2.0)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -109,6 +110,8 @@ GEM
       json
       multi_json
       request_store (>= 1.0)
+    groupdate (2.5.2)
+      activesupport (>= 3)
     has_scope (0.6.0)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
@@ -152,6 +155,7 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
+    pg (0.17.1)
     polyamorous (1.3.0)
       activerecord (>= 3.0)
     pry (0.10.3)
@@ -269,13 +273,16 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   byebug
+  chartkick
   devise
   factory_girl_rails
   formtastic (~> 3.1, >= 3.1.3)
   gon
+  groupdate
   jbuilder (~> 2.0)
   jquery-rails
   paperclip
+  pg
   pry
   pry-byebug
   rails (= 4.2.5.1)

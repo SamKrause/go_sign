@@ -32,7 +32,7 @@ Answer.create!(name: 'grandpa', question_id: 8, gif: File.new("public/images/see
 Answer.create!(name: 'sister', question_id: 9, gif: File.new("public/images/seed/sister.gif"))
 Answer.create!(name: 'uncle', question_id: 10, gif: File.new("public/images/seed/uncle.gif"))
 
-Attempt.create!(user_id: 1, question_id: 1, test_attempt_id: 1, correct: "true")
+Attempt.create!(user_id: 1, question_id: 1, correct: "true")
 
 Category.create!(name: "Family")
 
@@ -48,6 +48,6 @@ CategoriesAnswer.create!(category_id: 1, answer_id: 9)
 CategoriesAnswer.create!(category_id: 1, answer_id: 10)
 
 
-TestAttempt.create!(user_id: 1, category_id: 1)
+TestAttempt.create!(user_id: 1, category_id: 1, number_wrong: 4, number_right: 6)
 
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
