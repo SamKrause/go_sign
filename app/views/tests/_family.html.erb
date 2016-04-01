@@ -5,6 +5,7 @@
   <% @answers.each do |answer| %>
     <div class="next_question">
       <p class="correct_answer"><%= answer.name %></p>
+      <p class="question_id"><%= answer.question.id %></p>
       <img src="<%= answer.gif %>">
       <% current_answers = [answer] %>
       <% other_answers = @answers.dup - current_answers %>
