@@ -29,8 +29,20 @@ $(document).ready(function(){
       console.log('correct answer text: ' + $('.correct_answer').last().text());
       if($(this).text() == $('.correct_answer').last().text()){
         incrementRight();
+        data = {
+          user_id: Number($('.current_user_id').text()),
+          correct: "true",
+          question_id: Number($('.question_id').last().text())
+        };
+        postAttempt(data);
       } else {
         incremenWrong();
+        data = {
+          user_id: Number($('.current_user_id').text()),
+          correct: "false",
+          question_id: Number($('.question_id').last().text())
+          };
+        postAttempt(data);
       };
       console.log('number wrong: ' + Cookies.get('number_of_wrong'));
       console.log('number right: ' + Cookies.get('number_of_right'));
@@ -90,6 +102,13 @@ $(document).ready(function(){
     var increase = Number(Cookies.get('number_of_wrong')) + 1;
     Cookies.set('number_of_wrong', increase);
   };
+
+  function postAttempt(data) {
+    $.post(
+      '../attempts/create',
+      data
+    );
+  }
 
 
 })
