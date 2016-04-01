@@ -25,32 +25,19 @@ $(document).ready(function(){
 
   function resetQuestionButtons() {
     $('.answer').click(function(){
-      console.log('answer text: ' + $(this).text());
-      console.log('correct answer text: ' + $('.correct_answer').last().text());
       if($(this).text() == $('.correct_answer').last().text()){
         incrementRight();
-        data = {
-          user_id: Number($('.current_user_id').text()),
-          correct: "true",
-          question_id: Number($('.question_id').last().text())
-        };
-        postAttempt(data);
+        postAttempt("true")
       } else {
         incremenWrong();
-        data = {
-          user_id: Number($('.current_user_id').text()),
-          correct: "false",
-          question_id: Number($('.question_id').last().text())
-          };
-        postAttempt(data);
+        postAttempt("false")
       };
-      console.log('number wrong: ' + Cookies.get('number_of_wrong'));
-      console.log('number right: ' + Cookies.get('number_of_right'));
       if ($('.next_question').first().html()) {
         $('#current_question').html($('.next_question').first().html());
         $('.next_question').first().remove();
         resetQuestionButtons();
       } else {
+        postTestAttempt()
         $.get(
           'finished_test',
           function(response) {
@@ -79,6 +66,8 @@ $(document).ready(function(){
 
   function resetTryAgainButtons() {
     $('.category_try_again').click(function(){
+      Cookies.set('number_of_right', 0);
+      Cookies.set('number_of_wrong', 0);
       $.get(
         Cookies.get('cookies_category_name').toLowerCase(),
         function(response) {
@@ -103,12 +92,29 @@ $(document).ready(function(){
     Cookies.set('number_of_wrong', increase);
   };
 
-  function postAttempt(data) {
+  function postAttempt(boolean_answer) {
+    data = {
+      user_id: Number($('.current_user_id').text()),
+      correct: boolean_answer,
+      question_id: Number($('.question_id').last().text())
+      };
     $.post(
       '../attempts/create',
       data
     );
-  }
+  };
 
+  function postTestAttempt() {
+    data = {
+      user_id: Number($('.current_user_id').text()),
+      category_id: Number($('.hidden_category_id').text()),
+      number_right: Number(Cookies.get('number_of_right')),
+      number_wrong: Number(Cookies.get('number_of_wrong'))
+      };
+    $.post(
+      '../test_attempts/create',
+      data
+    );
+  };
 
 })

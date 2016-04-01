@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get '/tests/categories' => 'tests#categories'
 
   post '/attempts/create' => 'attempts#create'
+  post '/test_attempts/create' => 'test_attempts#create'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
