@@ -4,4 +4,6 @@
   <%= current_user.email %><br/><br/>
   <%= image_tag(current_user.avatar.url(:medium)) %><br/><br/>
   <h2>Stats</h2>
+
+  <%= line_chart TestAttempt.group_by_day(:created_at).count %>
 <% end %>

@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+gem "groupdate"
+gem "chartkick"
+
+gem 'pg'
+
 gem 'formtastic', '~> 3.1', '>= 3.1.3'
 gem 'activeadmin', '~> 1.0.0.pre2'
 gem 'devise'
