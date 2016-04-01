@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ asdf
  .auLogo{margin:0 auto;
  	
  	background: url(/assets/aulogo.svg) no-repeat; 

@@ -7,16 +7,39 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="headWrap">
+		<header>
+			<nav>
+			  <ul>
+	<li><%= link_to 'Home', '/home', :method => :get %> </li>
+	<li> <%= link_to 'About', '/about', :method => :get %> </li>
+	<!--<li> <%= link_to 'Tests', tests_index_path, :method => :get %> </li>-->
+	<li>
+	<% if current_user %>
+	<%= link_to "Log Out", destroy_user_session_path, :id => "logoutbutton", :method => :delete if current_user %>
+	<% else %>
+	 login
+		<% end %>
+	</li>
+</ul>
+			</nav>
+		</header>
+	</div>
+	<!-- body style-->
+	<div class="contentWrap">
+		<div class="content">	
+		<%= yield %>
+		</div>
+	</div>
+</body>
+</html>
 
-<nav>
+
+
+<!-- <nav>
   <% if current_user %>
     <ul class="name&avatar">
       <li class="username"><%= image_tag(current_user.avatar.url(:thumb)) %></li>
     </ul>
   <% end %>
-</nav>
-
-<%= yield %>
-
-</body>
-</html>
+</nav> -->
