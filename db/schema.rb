@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160330212018) do
+ActiveRecord::Schema.define(version: 20160401125750) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -60,10 +60,9 @@ ActiveRecord::Schema.define(version: 20160330212018) do
   create_table "attempts", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "question_id"
-    t.integer  "test_attempt_id"
     t.boolean  "correct"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "categories", force: :cascade do |t|
@@ -89,8 +88,10 @@ ActiveRecord::Schema.define(version: 20160330212018) do
   create_table "test_attempts", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "number_right"
+    t.integer  "number_wrong"
   end
 
   create_table "users", force: :cascade do |t|
