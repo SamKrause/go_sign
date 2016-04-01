@@ -4,12 +4,12 @@ $(document).ready(function(){
 
   function setCategoryButtons() {
     $('.category_name').click(function(){
-      // var $category_name = $(this).text();
-      Cookies.set('array_number', 0)
+      var $category_name = $(this).text();
+      Cookies.set('cookies_category_name', $category_name)
       $.get(
-        'family',
+        $category_name.toLowerCase(),
         function(response) {
-          $('#test').html(response.family_questions);
+          $('#test').html(response.questions);
           var first_question = $('.next_question').first().html();
           $('#current_question').html(first_question);
           $('.next_question').first().remove();
@@ -33,7 +33,7 @@ $(document).ready(function(){
           function(response) {
             $('#test').html(response.finished_test);
             resetSuccessButtons();
-            setCategoryButtons();
+            resetTryAgainButtons();
           }
         )
       }
@@ -51,6 +51,22 @@ $(document).ready(function(){
           setCategoryButtons();
         }
       )
+    });
+  }
+
+  function resetTryAgainButtons() {
+    $('.category_try_again').click(function(){
+      $.get(
+        Cookies.get('cookies_category_name').toLowerCase(),
+        function(response) {
+          $('#test').html(response.questions);
+          var first_question = $('.next_question').first().html();
+          $('#current_question').html(first_question);
+          $('.next_question').first().remove();
+          resetQuestionButtons();
+
+        }
+      );
     });
   }
 
