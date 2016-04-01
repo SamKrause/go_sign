@@ -5,7 +5,9 @@ $(document).ready(function(){
   function setCategoryButtons() {
     $('.category_name').click(function(){
       var $category_name = $(this).text();
-      Cookies.set('cookies_category_name', $category_name)
+      Cookies.set('cookies_category_name', $category_name);
+      Cookies.set('number_of_right', 0);
+      Cookies.set('number_of_wrong', 0);
       $.get(
         $category_name.toLowerCase(),
         function(response) {
@@ -23,6 +25,15 @@ $(document).ready(function(){
 
   function resetQuestionButtons() {
     $('.answer').click(function(){
+      console.log('answer text: ' + $(this).text());
+      console.log('correct answer text: ' + $('.correct_answer').last().text());
+      if($(this).text() == $('.correct_answer').last().text()){
+        incrementRight();
+      } else {
+        incremenWrong();
+      };
+      console.log('number wrong: ' + Cookies.get('number_of_wrong'));
+      console.log('number right: ' + Cookies.get('number_of_right'));
       if ($('.next_question').first().html()) {
         $('#current_question').html($('.next_question').first().html());
         $('.next_question').first().remove();
@@ -69,6 +80,16 @@ $(document).ready(function(){
       );
     });
   }
+
+  function incrementRight() {
+    var increase = Number(Cookies.get('number_of_right')) + 1;
+    Cookies.set('number_of_right', increase);
+  };
+
+  function incremenWrong() {
+    var increase = Number(Cookies.get('number_of_wrong')) + 1;
+    Cookies.set('number_of_wrong', increase);
+  };
 
 
 })
