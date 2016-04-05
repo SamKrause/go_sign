@@ -1,9 +1,12 @@
+<h2>Stats</h2>
 <% if current_user %>
   <h1>Profile</h1><br/>
-  <%= current_user.first_name %><%= current_user.last_name %><br/><br/>
+  <%= current_user.first_name %> <%= current_user.last_name %><br/><br/>
   <%= current_user.email %><br/><br/>
   <%= image_tag(current_user.avatar.url(:medium)) %><br/><br/>
-  <h2>Stats</h2>
-
   <%= line_chart TestAttempt.group_by_day(:created_at).count %>
+<% else %>
+  <h1>You Need To Sign Up!</h1>
+  <h3>Keep track of your perfomances.</h3>
+  <p>Once, you register you can view stats on how well you do on each question here.</p>
 <% end %>

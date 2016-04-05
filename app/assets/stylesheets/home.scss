@@ -60,32 +60,4 @@
     cursor: pointer;
   }
 
-  .panel {
-    display: inline-block;
-    padding: 2em;
-    background: gray;
-    transform: translateX(-150%);
-    transition: .5s transform;
-    position: absolute;
-    left: 0;
-    top: 10em;
-
-    &.show {
-      transform: translateX(0);
-    }
-  }
-
-  .close {
-    margin-top: -1.5em;
-    margin-right: -1.5em;
-    float: right;
-    cursor: pointer;
-  }
-
-  input {
-    display: block;
-    padding: .5em;
-    margin: 1em;
-  }
-
 }

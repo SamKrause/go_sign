@@ -16,7 +16,7 @@
       height: 100px;
       margin-top: 10px;
       line-height: 100px;
-      color: skyblue;
+      color: rgba(46, 138, 138, 0.7);
       font-weight: bold;
       font-size: 3em;
       text-align: center;
@@ -24,7 +24,7 @@
 
       &:hover {
         color: white;
-        background: skyblue;
+        background: rgba(46, 138, 138, 0.7);
       }
     }
   }
