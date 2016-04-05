@@ -81,10 +81,3 @@ nav li a:hover{
 	color:grey;
 }
 nav li a:active{ color:white; }
-
-.typing {
-  width:600px;
-	position: relative;
-  margin:0 auto;
-  top:100px;
-}
