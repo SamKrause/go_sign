@@ -45,3 +45,35 @@
     }
   }
 }
+
+// styling for the log in, sign up ajax calls
+
+.panel {
+  display: inline-block;
+  padding: 2em;
+  background: rgba(46, 138, 138, 0.7);
+  transform: translateX(-150%);
+  transition: .5s transform;
+  position: absolute;
+  left: 0;
+  top: 10em;
+
+  &.show {
+    transform: translateX(0);
+  }
+}
+
+.close {
+  margin-top: -1.5em;
+  margin-right: -1.5em;
+  float: right;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+input {
+  display: block;
+  padding: .5em;
+  margin: 1em;
+}
