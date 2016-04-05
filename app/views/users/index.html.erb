@@ -7,3 +7,7 @@
 
   <%= line_chart TestAttempt.group_by_day(:created_at).count %>
 <% end %>
+
+<% TestAttempt.all.each do |t| %>
+  <%= t.created_at t.number_right %>
+<% end %>

@@ -11,6 +11,13 @@ class UsersController < ApplicationController
     end
   end
 
+    def generateTestAttemptHash
+      TestAttempt.all.each do |t|
+        hash = {t.created_at => t.number_right}
+
+      end
+    end
+
   private
 
   def user_params
