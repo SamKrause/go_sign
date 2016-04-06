@@ -61,3 +61,8 @@ group :development do
   gem 'pry'
   gem 'pry-byebug'
 end
+
+group :production do
+  # for heroku static assest serving and logging
+  gem 'rails_12factor'
+end
