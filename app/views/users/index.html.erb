@@ -4,18 +4,10 @@
   <%= current_user.first_name %> <%= current_user.last_name %><br/><br/>
   <%= current_user.email %><br/><br/>
   <%= image_tag(current_user.avatar.url(:medium)) %><br/><br/>
-  <% if @test_attempt_hash_family %>
-    <%= line_chart @test_attempt_hash_family, xtitle: "Recent Tests", ytitle: "Number Correct Out of 10", max: 10, colors: ["green"], discrete: true, library: {curveType: "none", title: "Family Category", vAxis: {gridlines: {count: 6}}} %>
-  <% end %>
-  <% if @test_attempt_hash_food %>
-    <%= line_chart @test_attempt_hash_food, xtitle: "Recent Tests", ytitle: "Number Correct Out of 10", max: 10, colors: ["green"], discrete: true, library: {curveType: "none", title: "Food Category", vAxis: {gridlines: {count: 6}}} %>
-  <% end %>
-  <% if @test_attempt_hash_feelings %>
-    <%= line_chart @test_attempt_hash_feelings, xtitle: "Recent Tests", ytitle: "Number Correct Out of 10", max: 10, colors: ["green"], discrete: true, library: {curveType: "none", title: "Feelings Category", vAxis: {gridlines: {count: 6}}} %>
-  <% end %>
-  <%= pie_chart @chart_hash_family %>
-  <%= pie_chart @chart_hash_feelings %>
-  <%= column_chart @chart_hash_family %>
+  <%= line_chart @line_chart_array, xtitle: "Recent Tests", ytitle: "Number Correct Out of 10", max: 10, discrete: true, library: {curveType: "none", title: "Test Attempt Scores", vAxis: {gridlines: {count: 6}}} %>
+  <%= column_chart @column_chart_family, xtitle: "Questions", colors: ["blue", "red"], library: {title: "Family Category"} %>
+  <%= column_chart  @column_chart_food, xtitle: "Questions", colors: ["blue", "red"], library: {title: "Food Category"} %>
+  <%= column_chart  @column_chart_feelings, xtitle: "Questions", colors: ["blue", "red"], library: {title: "Feelings Category"} %>
 <% else %>
   <h1>You Need To Sign Up!</h1>
   <h3>Keep track of your perfomances.</h3>

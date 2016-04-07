@@ -12,11 +12,10 @@ class UsersController < ApplicationController
   end
 
   def index
-    @test_attempt_hash_family = generateTestAttemptHash(current_user.id, getCategoryId("Family"))
-    @test_attempt_hash_food = generateTestAttemptHash(current_user.id, getCategoryId("Food"))
-    @test_attempt_hash_feelings = generateTestAttemptHash(current_user.id, getCategoryId("Feelings"))
-    @chart_hash_family = generateChartGraphHash(current_user.id, "Family")
-    @chart_hash_feelings = generateChartGraphHash(current_user.id, "Feelings")
+    @column_chart_family = generateAttemptHash(current_user.id, "Family")
+    @column_chart_feelings = generateAttemptHash(current_user.id, "Feelings")
+    @column_chart_food = generateAttemptHash(current_user.id, "Food")
+    @line_chart_array = generateLineChartArray(current_user.id)
   end
 
   private
