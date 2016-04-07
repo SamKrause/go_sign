@@ -11,12 +11,13 @@ class UsersController < ApplicationController
     end
   end
 
-    def generateTestAttemptHash
-      TestAttempt.all.each do |t|
-        hash = {t.created_at => t.number_right}
-
-      end
-    end
+  def index
+    @test_attempt_hash_family = generateTestAttemptHash(current_user.id, getCategoryId("Family"))
+    @test_attempt_hash_food = generateTestAttemptHash(current_user.id, getCategoryId("Food"))
+    @test_attempt_hash_feelings = generateTestAttemptHash(current_user.id, getCategoryId("Feelings"))
+    @chart_hash_family = generateChartGraphHash(current_user.id, "Family")
+    @chart_hash_feelings = generateChartGraphHash(current_user.id, "Feelings")
+  end
 
   private
 
