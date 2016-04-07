@@ -22,7 +22,7 @@
  }
 
  .auLogosm {
- 	background: url(/assets/audisaSm.svg) no-repeat;
+ 	background: url("https://s3.amazonaws.com/go-sign/audisaSm.svg") no-repeat;
  	background-size:contain;
  	width:120px;
  	height:50px;
@@ -30,7 +30,7 @@
 
  .auLogo {
   margin:0 auto;
- 	background: url(/assets/aulogo.svg) no-repeat;
+ 	background: url("https://s3.amazonaws.com/go-sign/aulogo.svg") no-repeat;
  	background-size:contain;
  	width:250px;
  	height:100px;
