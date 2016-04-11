@@ -30,6 +30,24 @@ class TestsController < ApplicationController
     render json: {success: true, questions: view_string}
   end
 
+  def occupationQuestions
+    @occupation = Category.find_by_name("Occupation")
+    @occupation_answers = @occupation.answers
+    @answers = generateAnswers(@occupation_answers)
+
+    view_string = render_to_string partial: 'tests/occupation'
+    render json: {success: true, questions: view_string}
+  end
+
+  def transportationQuestions
+    @transportation = Category.find_by_name("Transportation")
+    @transportation_answers = @transportation.answers
+    @answers = generateAnswers(@transportation_answers)
+
+    view_string = render_to_string partial: 'tests/transportation'
+    render json: {success: true, questions: view_string}
+  end
+
   def finishedTestPage
     view_string = render_to_string partial: 'tests/finished_test'
     render json: {success: true, finished_test: view_string}

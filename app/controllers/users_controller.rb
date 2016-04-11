@@ -15,6 +15,8 @@ class UsersController < ApplicationController
     @column_chart_family = generateAttemptHash(current_user.id, "Family")
     @column_chart_feelings = generateAttemptHash(current_user.id, "Feelings")
     @column_chart_food = generateAttemptHash(current_user.id, "Food")
+    @column_chart_occupation = generateAttemptHash(current_user.id, "Occupation")
+    @column_chart_transportation = generateAttemptHash(current_user.id, "Transportation")
     @line_chart_array = generateLineChartArray(current_user.id)
   end
 
