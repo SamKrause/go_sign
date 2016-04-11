@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   get '/tests/feelings' => 'tests#feelingsQuestions'
   get '/tests/finished_test' => 'tests#finishedTestPage'
   get '/tests/categories' => 'tests#categories'
+  get '/tests/occupation' => 'tests#occupationQuestions'
+  get '/tests/transportation' => 'tests#transportationQuestions'
 
   post '/attempts/create' => 'attempts#create'
   post '/test_attempts/create' => 'test_attempts#create'
