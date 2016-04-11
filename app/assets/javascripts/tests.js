@@ -1,11 +1,12 @@
 $(document).ready(function(){
-  var question_array = [];
+
   setCategoryButtons();
 
   function setCategoryButtons() {
     $('.category_name').click(function(){
       var $category_name = $(this).text();
-      Cookies.set('cookies_category_name', $category_name);
+      $('#preloader').css("display", "flex");; // starts preloader image
+      Cookies.set('cookies_category_name', $category_name); // sets cookies to track the category, questions attempted, and number right and wrong answered
       Cookies.set('number_of_right', 0);
       Cookies.set('number_of_wrong', 0);
       $.get(
@@ -14,13 +15,13 @@ $(document).ready(function(){
           $('#test').html(response.questions);
           var first_question = $('.next_question').first().html();
           $('#current_question').html(first_question);
-          $('.next_question').first().remove();
+          $('.next_question').first().remove(); // removes the top most question from the list of questions
           resetQuestionButtons();
-
         }
       );
     });
   };
+
   //Logic for Questions
 
   function resetQuestionButtons() {
@@ -36,22 +37,22 @@ $(document).ready(function(){
       };
 
       setTimeout(function(){
-      if ($('.next_question').first().html()) {
-        $('#current_question').html($('.next_question').first().html()).hide().fadeIn(1000);
-        $('.next_question').first().remove();
-        resetQuestionButtons();
-      } else {
-        postTestAttempt()
-        $.get(
-          'finished_test',
-          function(response) {
-            $('#test').html(response.finished_test);
-            resetSuccessButtons();
-            resetTryAgainButtons();
-          }
-        )
-      }
-    }, 4000);
+        if ($('.next_question').first().html()) {
+          $('#current_question').html($('.next_question').first().html()).hide().fadeIn(1000);
+          $('.next_question').first().remove();
+          resetQuestionButtons();
+        } else {
+          postTestAttempt()
+          $.get(
+            'finished_test',
+            function(response) {
+              $('#test').html(response.finished_test);
+              resetSuccessButtons();
+              resetTryAgainButtons();
+            }
+          )
+        }
+      }, 4000);
     });
   };
 
