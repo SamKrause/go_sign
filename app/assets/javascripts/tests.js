@@ -1,26 +1,31 @@
 $(document).ready(function(){
-  var question_array = [];
+
   setCategoryButtons();
 
   function setCategoryButtons() {
     $('.category_name').click(function(){
       var $category_name = $(this).text();
-      Cookies.set('cookies_category_name', $category_name);
+      Cookies.set('cookies_category_name', $category_name); // sets cookies to track the category, questions attempted, and number right and wrong answered
       Cookies.set('number_of_right', 0);
       Cookies.set('number_of_wrong', 0);
+
       $.get(
         $category_name.toLowerCase(),
         function(response) {
           $('#test').html(response.questions);
-          var first_question = $('.next_question').first().html();
-          $('#current_question').html(first_question);
-          $('.next_question').first().remove();
-          resetQuestionButtons();
-
+          $('#preloader').css({"display": "flex", "flex-direction": "column"}); // starts preloader image
+          $('.next_question').imagesLoaded( function() {
+            $('#preloader').css("display", "none"); // starts preloader image
+            var first_question = $('.next_question').first().html();
+            $('#current_question').html(first_question);
+            $('.next_question').first().remove(); // removes the top most question from the list of questions
+            resetQuestionButtons();
+          });
         }
       );
     });
   };
+
   //Logic for Questions
 
   function resetQuestionButtons() {
@@ -36,22 +41,22 @@ $(document).ready(function(){
       };
 
       setTimeout(function(){
-      if ($('.next_question').first().html()) {
-        $('#current_question').html($('.next_question').first().html()).hide().fadeIn(1000);
-        $('.next_question').first().remove();
-        resetQuestionButtons();
-      } else {
-        postTestAttempt()
-        $.get(
-          'finished_test',
-          function(response) {
-            $('#test').html(response.finished_test);
-            resetSuccessButtons();
-            resetTryAgainButtons();
-          }
-        )
-      }
-    }, 4000);
+        if ($('.next_question').first().html()) {
+          $('#current_question').html($('.next_question').first().html()).hide().fadeIn(1000);
+          $('.next_question').first().remove();
+          resetQuestionButtons();
+        } else {
+          postTestAttempt()
+          $.get(
+            'finished_test',
+            function(response) {
+              $('#test').html(response.finished_test);
+              resetSuccessButtons();
+              resetTryAgainButtons();
+            }
+          )
+        }
+      }, 4000);
     });
   };
 
