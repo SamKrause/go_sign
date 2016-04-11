@@ -5,18 +5,22 @@ $(document).ready(function(){
   function setCategoryButtons() {
     $('.category_name').click(function(){
       var $category_name = $(this).text();
-      $('#preloader').css("display", "flex");; // starts preloader image
       Cookies.set('cookies_category_name', $category_name); // sets cookies to track the category, questions attempted, and number right and wrong answered
       Cookies.set('number_of_right', 0);
       Cookies.set('number_of_wrong', 0);
+
       $.get(
         $category_name.toLowerCase(),
         function(response) {
           $('#test').html(response.questions);
-          var first_question = $('.next_question').first().html();
-          $('#current_question').html(first_question);
-          $('.next_question').first().remove(); // removes the top most question from the list of questions
-          resetQuestionButtons();
+          $('#preloader').css({"display": "flex", "flex-direction": "column"}); // starts preloader image
+          $('.next_question').imagesLoaded( function() {
+            $('#preloader').css("display", "none"); // starts preloader image
+            var first_question = $('.next_question').first().html();
+            $('#current_question').html(first_question);
+            $('.next_question').first().remove(); // removes the top most question from the list of questions
+            resetQuestionButtons();
+          });
         }
       );
     });
