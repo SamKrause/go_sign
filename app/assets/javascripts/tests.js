@@ -35,7 +35,7 @@ $(document).ready(function(){
         postAttempt("true")
         $('.answer_message').last().html("Correct!").slideDown(1000);
       } else {
-        incremenWrong();
+        incrementWrong();
         postAttempt("false")
         $('.answer_message').last().slideDown(1000);
       };
@@ -51,6 +51,8 @@ $(document).ready(function(){
             'finished_test',
             function(response) {
               $('#test').html(response.finished_test);
+              var results = "you answered " + Cookies.get('number_of_right') + " questions correctly out of 10 questions.";
+              $('#test_results').html(results);
               resetSuccessButtons();
               resetTryAgainButtons();
             }
@@ -97,7 +99,7 @@ $(document).ready(function(){
     Cookies.set('number_of_right', increase);
   };
 
-  function incremenWrong() {
+  function incrementWrong() {
     var increase = Number(Cookies.get('number_of_wrong')) + 1;
     Cookies.set('number_of_wrong', increase);
   };
