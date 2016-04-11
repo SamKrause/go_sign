@@ -37,9 +37,13 @@ class ApplicationController < ActionController::Base
     family_hash = generateTestAttemptHash(current_user_id, getCategoryId("Family"))
     feelings_hash = generateTestAttemptHash(current_user_id, getCategoryId("Feelings"))
     food_hash = generateTestAttemptHash(current_user_id, getCategoryId("Food"))
+    occupation_hash = generateTestAttemptHash(current_user_id, getCategoryId("Occupation"))
+    transportation_hash = generateTestAttemptHash(current_user_id, getCategoryId("Transportation"))
     line_chart_array.push({name: "Family", data: family_hash}) if family_hash
     line_chart_array.push({name: "Feelings", data: feelings_hash}) if feelings_hash
     line_chart_array.push({name: "Food", data: food_hash}) if food_hash
+    line_chart_array.push({name: "Occupation", data: occupation_hash}) if occupation_hash
+    line_chart_array.push({name: "Transportation", data: transportation_hash}) if transportation_hash
     return line_chart_array
   end
 
