@@ -62,6 +62,7 @@ center {
   }
 }
 
+
 #finish_congrats {
   margin-top: 25px;
   text-align: center;
@@ -85,4 +86,9 @@ center {
   background-color: rgba(46, 138, 138, 0.4);
   cursor: pointer;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#preloader {
+  top: 100px;
+  display: none;
 }
